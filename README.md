@@ -1,4 +1,4 @@
-This is a currency converter that can convert updated current rate and past conversion rate.
+This is a currency converter that can convert current updated rate and past conversion rate.
 
 RATES SOURCE:
 
