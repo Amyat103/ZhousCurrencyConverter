@@ -1,9 +1,9 @@
 import requests
 import json
 
+print("Welcome to Zhou's currency converter!")
 def currency_converter():
-    print("Welcome to Zhou's currency converter!")
-    print("Do you want to see the supported currencies? 'Y' for yes or 'NO' for no")
+    print("Do you want to see the supported currencies? 'Y' for yes or 'N' for no")
     supported_cur = input().upper()
     if supported_cur == "Y":
         print('''
@@ -78,15 +78,12 @@ def currency_converter():
 
 currency_converter()
 
-print("Do you want to convert again? Type 'YES' or 'Y'")
-again_choice = input().upper()
-
-while again_choice != "YES" or again_choice != "Y":
-    print("Invalid input, try again")
-    again_choice = input().upper()
 while True:
-    if again_choice == "YES" or again_choice == "Y":
+    print("Do you want to convert again? Type 'YES' or 'NO'")
+    again_choice = input().upper().strip()
+    if again_choice == "YES":
         currency_converter()
+        continue
     else:
         break
 
