@@ -1,8 +1,6 @@
 import requests
 import json
 
-exchange_rate_cache = {} #to improve efficiency on previously converted rates
-
 print("Do you want to calculate the current rate or historical rate(Type 'C' for current or 'H' for history")
 user_choice = input()
 
@@ -36,4 +34,3 @@ elif user_choice == "H":
     exchange_rate = python_converted["rates"][exchange_to]
     converted_rate = round(exchange_rate * exchange_amount, 4)
     print(f"Your {exchange_amount} {exchange_from} converted to {converted_rate} {exchange_to}.")
-
