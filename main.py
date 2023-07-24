@@ -42,7 +42,7 @@ def currency_converter():
     else:
         pass
 
-    print("Do you want to calculate the current rate or historical rate(Type 'C' for current or 'H' for history")
+    print("Do you want to calculate the current rate or historical rate? (Type 'C' for current or 'H' for history")
     user_choice = input().upper()
 
     while (user_choice != "H" and user_choice != "C") and user_choice != "L":
@@ -50,7 +50,7 @@ def currency_converter():
         user_choice = input()
 
     if user_choice == "C":
-        print("Which currency do you want to exchange from (Type the three letter code ex.USD EUR)")
+        print("Which currency do you want to exchange from? (Type the three letter code ex.USD EUR)")
         exchange_from = input().upper()
         print("Which currency do you want to exchange to")
         exchange_to = input().upper()
@@ -90,4 +90,4 @@ while True:
     else:
         break
 
-print("Thank you for using Zhou's Currency Converter")
+print("Thank you for using Zhou's Currency Converter!")
