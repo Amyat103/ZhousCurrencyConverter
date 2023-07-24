@@ -2,11 +2,50 @@ import requests
 import json
 
 def currency_converter():
-    print("Welcom to Zhou's currency converter!")
-    print("Do you want to calculate the current rate or historical rate(Type 'C' for current or 'H' for history")
-    user_choice = input()
+    print("Welcome to Zhou's currency converter!")
+    print("Do you want to see the supported currencies? 'Y' for yes or 'NO' for no")
+    supported_cur = input().upper()
+    if supported_cur == "Y":
+        print('''
+    "AUD": "Australian Dollar",
+    "BGN": "Bulgarian Lev",
+    "BRL": "Brazilian Real",
+    "CAD": "Canadian Dollar",
+    "CHF": "Swiss Franc",
+    "CNY": "Chinese Renminbi Yuan",
+    "CZK": "Czech Koruna",
+    "DKK": "Danish Krone",
+    "EUR": "Euro",
+    "GBP": "British Pound",
+    "HKD": "Hong Kong Dollar",
+    "HUF": "Hungarian Forint",
+    "IDR": "Indonesian Rupiah",
+    "ILS": "Israeli New Sheqel",
+    "INR": "Indian Rupee",
+    "ISK": "Icelandic Króna",
+    "JPY": "Japanese Yen",
+    "KRW": "South Korean Won",
+    "MXN": "Mexican Peso",
+    "MYR": "Malaysian Ringgit",
+    "NOK": "Norwegian Krone",
+    "NZD": "New Zealand Dollar",
+    "PHP": "Philippine Peso",
+    "PLN": "Polish Złoty",
+    "RON": "Romanian Leu",
+    "SEK": "Swedish Krona",
+    "SGD": "Singapore Dollar",
+    "THB": "Thai Baht",
+    "TRY": "Turkish Lira",
+    "USD": "United States Dollar",
+    "ZAR": "South African Rand"
+        ''')
+    else:
+        pass
 
-    while user_choice != "H" and user_choice != "C":
+    print("Do you want to calculate the current rate or historical rate(Type 'C' for current or 'H' for history")
+    user_choice = input().upper()
+
+    while (user_choice != "H" and user_choice != "C") and user_choice != "L":
         print("Invalid input(Type 'C' for current or 'H' for history")
         user_choice = input()
 
@@ -38,8 +77,13 @@ def currency_converter():
         print(f"Your {exchange_amount} {exchange_from} converted to {converted_rate} {exchange_to}.")
 
 currency_converter()
-print("Do you want to convert again?")
-again_choice = input()
+
+print("Do you want to convert again? Type 'YES' or 'Y'")
+again_choice = input().upper()
+
+while again_choice != "YES" or again_choice != "Y":
+    print("Invalid input, try again")
+    again_choice = input().upper()
 while True:
     if again_choice == "YES" or again_choice == "Y":
         currency_converter()
